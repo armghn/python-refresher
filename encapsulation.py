@@ -1,0 +1,30 @@
+class Employee:
+    def __init__(self, name, age, salary):
+        self.name = name
+        self._age = age
+        self.__salary = salary
+
+    def get_salary(self):
+        return self.__salary
+
+    def set_salary(self, amount):
+        if amount > 0:
+            self.__salary = amount
+        else:
+            print("Invalid salary amount")
+
+
+class SubEmployee(Employee):
+    def show_age(self):
+        return self._age
+
+emp1 = Employee("Ali", 25, 5_000)
+print(emp1._age)
+print(emp1.get_salary())
+emp1.set_salary(7000)
+print(emp1.get_salary())
+# print(emp1.__salary)     Error: Not accessible directly
+
+subEmp1 = SubEmployee("hasan", "30", "8000")
+print(subEmp1._age)
+print(subEmp1.show_age())
