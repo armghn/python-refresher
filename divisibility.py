@@ -9,7 +9,5 @@ def divis(num):
         return None
 
 
-print(divis(15))
-print(divis(9))
-print(divis(25))
-print(divis(16))
+n = int(input("Enter a number: "))
+print(divis(n))
