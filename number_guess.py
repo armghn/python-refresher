@@ -13,19 +13,42 @@ def get_a_guess():
 def answer(computer_number, guess):
     if computer_number > guess:
         return "My number is larger!"
-    elif computer_number < guess:
+    if computer_number < guess:
         return "My number is smaller!"
-    else:
-        return "Bingo!"
+    return "Bingo!"
 
 
-guess = 0
+def finish(num, count, best_player):
+    print(f"My number was {num} and you found it in {count} guess(es)!")
+    if best_player != 0:
+        print(f"And the best player found it in {best_player} guess(es)!")
+    answer = input("Do you want to play again? (Y/N) ")
+    if answer.lower() == 'y':
+        return True
+    return False
 
-computer_number = randint(1, 20)
 
-while not win(computer_number, guess):
-    guess = get_a_guess()
-    print(answer(computer_number, guess))
+play_again = True
+
+best_player = 0
+
+while play_again:
+    guess = 0
+
+    computer_number = randint(1, 20)
+
+    count = 0
+    while not win(computer_number, guess):
+        count += 1
+        guess = get_a_guess()
+        print(answer(computer_number, guess))
+
+    if best_player == 0 or count < best_player:
+        best_player = count
+    play_again = finish(computer_number, count, best_player)
+
+
+
 
 
 
