@@ -10,10 +10,14 @@ class Person:
         return f"name: {self.name}, age: {self.age}"
 
     def __add__(self, other):
-        sum = self.age + other.age
-        return sum
+        if not isinstance(other, Person):
+            return NotImplemented
+        sums = self.age + other.age
+        return sums
 
     def __eq__(self, other):
+        if not isinstance(other, Person):
+            return NotImplemented
         return self.age == other.age
 
 
