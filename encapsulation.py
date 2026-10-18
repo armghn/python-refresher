@@ -13,7 +13,7 @@ class Employee:
         if amount > 0:
             self.__salary = amount
         else:
-            print("Invalid salary amount!")
+            raise ValueError("Salary must be positive")
 
 
 class SubEmployee(Employee):
