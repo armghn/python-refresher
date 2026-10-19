@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+# Use ABCs to define a common interface that subclasses must implement.
 
 
 class Payment(ABC):
