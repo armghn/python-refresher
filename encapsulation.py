@@ -1,3 +1,5 @@
+#Encapsulation is not simply making attributes private. It is about controlling access to an object's internal state and protecting its data from invalid changes
+
 class Employee:
     def __init__(self, name, age, salary):
         self.name = name
@@ -11,7 +13,7 @@ class Employee:
     @salary.setter
     def salary(self, amount):
         if amount > 0:
-            self.__salary = amount
+            self.__salary = amount        #Notice that self.__salary = value updates the underlying attribute directly. It does not call the setter again, so there is no infinite recursion.
         else:
             raise ValueError("Salary must be positive")
 
