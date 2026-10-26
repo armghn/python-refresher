@@ -1,7 +1,8 @@
 from dataclasses import dataclass, field
 
 
-@dataclass
+# @dataclass automatically generates __init__(), __repr__(), and __eq__() by default.
+@dataclass(frozen=True)
 class Employee:
     name: str
     age: int
