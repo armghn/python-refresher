@@ -1,5 +1,8 @@
 from time import time
+from functools import wraps
+
 def timer_func(func):
+    @wraps(func)    # Preserves the original function's metadata, not its behavior.
     def wrap_func(*args, **kwargs):
         t1 = time()
         result = func(*args, **kwargs)
@@ -19,3 +22,4 @@ def long_time(n):
 long_time(5)
 long_time(50)
 long_time(500)
+print(long_time.__name__)
