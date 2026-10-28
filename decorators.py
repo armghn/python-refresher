@@ -1,11 +1,11 @@
 def run_on_zoj(f):
-    def wrapper(*args, **kwargs):
+    def wrapper():
         from datetime import datetime
         now = datetime.now()
         minute = now.minute
         print(now)
         if minute % 2 == 0:
-            f(*args, **kwargs)
+            f()
         else:
             print("Shhh!")
 
