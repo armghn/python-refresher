@@ -1,6 +1,8 @@
+from datetime import datetime
+
+
 def run_on_zoj(f):
     def wrapper():
-        from datetime import datetime
         now = datetime.now()
         minute = now.minute
         print(now)

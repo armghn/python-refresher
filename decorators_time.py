@@ -1,6 +1,7 @@
 from time import time
 from functools import wraps
 
+
 def timer_func(func):
     @wraps(func)    # Preserves the original function's metadata, not its behavior.
     def wrap_func(*args, **kwargs):
