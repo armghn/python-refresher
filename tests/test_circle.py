@@ -1,7 +1,3 @@
-import pytest
-import shapes
-
-
 def test_area(circle):
     assert circle.area() == 3.14 * (circle.r ** 2)
 
