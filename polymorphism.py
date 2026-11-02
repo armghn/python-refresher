@@ -20,10 +20,17 @@ class Cat(Animal):
         print("Cat meows")
 
 
+
+def speak(animal):
+    animal.speak()
+    
 animals = [Dog(), Cat(), Animal()]
 
 for animal in animals:
-    animal.speak()
+    speak(animal)
+
+
+
 
 
 
