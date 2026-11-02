@@ -27,7 +27,7 @@ for animal in animals:
 
 
 
-#Compile-tiem
+#Compile-time
 def add(*args):
     return sum(args)
 
